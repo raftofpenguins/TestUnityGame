@@ -55,6 +55,12 @@ public class Bird : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        StartCoroutine(ResetAfterDelay());
+    }
+
+    IEnumerator ResetAfterDelay()
+    {
+        yield return new WaitForSeconds(3);
         _rigidbody2D.position = _startPosition;
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
