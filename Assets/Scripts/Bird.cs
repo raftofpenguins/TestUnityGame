@@ -15,6 +15,11 @@ public class Bird : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.red;
     }
 
+    void OnMouseUp()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     // Update is called once per frame
     void Update()
     {
