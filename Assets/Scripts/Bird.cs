@@ -10,6 +10,11 @@ public class Bird : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = true;
     }
 
+    void OnMouseDown()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+    }
+
     // Update is called once per frame
     void Update()
     {
