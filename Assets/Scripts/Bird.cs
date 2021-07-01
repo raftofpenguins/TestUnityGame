@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+    [SerializeField] float _launchForce = 500;
+    
     Vector2 _startPosition;     // Defines variable for use in Start function
     Rigidbody2D _rigidbody2D;   // Used for cache
     SpriteRenderer _spriteRenderer;
@@ -33,7 +35,7 @@ public class Bird : MonoBehaviour
         direction.Normalize();
 
         _rigidbody2D.isKinematic = false;
-        _rigidbody2D.AddForce(direction * 500);
+        _rigidbody2D.AddForce(direction * _launchForce);
 
         _spriteRenderer.color = Color.white;
     }
