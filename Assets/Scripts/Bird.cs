@@ -20,6 +20,13 @@ public class Bird : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
+    void OnMouseDrag()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+        // Sends mouse position to mousePosition, but ignores z-coord due to camera @ z = -10
+    }
+
     // Update is called once per frame
     void Update()
     {
